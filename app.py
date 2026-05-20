@@ -7,7 +7,20 @@ from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 from twilio.rest import Client
 from dotenv import load_dotenv
+
+# ----- .env DOSYASINI YÜKLE -----
 load_dotenv()
+
+# ----- .env'DEN DEĞİŞKENLERİ AL -----
+TWILIO_ACCOUNT_SID = os.getenv('TWILIO_ACCOUNT_SID')
+TWILIO_AUTH_TOKEN = os.getenv('TWILIO_AUTH_TOKEN')
+TWILIO_WHATSAPP_NUMBER = os.getenv('TWILIO_WHATSAPP_NUMBER')
+ADMIN_WHATSAPP_NUMBER = os.getenv('ADMIN_WHATSAPP_NUMBER')
+CONTENT_SID = os.getenv('CONTENT_SID')
+
+# Eksik değişken varsa hata ver
+if not all([TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_WHATSAPP_NUMBER, ADMIN_WHATSAPP_NUMBER, CONTENT_SID]):
+    raise ValueError(".env dosyasında gerekli Twilio bilgileri eksik!")
 
 # ----- KONFİGÜRASYON -----
 logging.basicConfig(level=logging.INFO)
@@ -23,6 +36,7 @@ PRICE_PER_GRAM = 1.5      # TL/gram
 EXTRA_PER_COLOR = 20      # TL (1 renk hariç)
 SHIPPING = 70             # TL
 
+# ----- TWILIO CLIENT -----
 twilio_client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 
 # ----- YARDIMCI FONKSİYONLAR -----
@@ -38,17 +52,6 @@ def estimate_from_file_size(file_path):
 def send_whatsapp_template(order_data):
     """
     9 değişkenli Twilio şablonu ile sipariş bildirimi.
-    Şablon:
-    Yeni sipariş aldın.
-    📦 Sipariş No: {{1}}
-    👤 Müşteri: {{2}}
-    📞 Telefon: {{3}}
-    ✉️ E-posta: {{4}}
-    🛠️ Malzeme: {{5}}
-    🎨 Renk: {{6}}
-    🔢 Adet: {{7}}
-    💰 Toplam: {{8}} TL
-    📝 Notlar: {{9}}
     """
     try:
         content_vars = json.dumps({
@@ -133,7 +136,7 @@ def quote():
         if tmp_path and os.path.exists(tmp_path):
             os.unlink(tmp_path)
 
-# ----- SİPARİŞ ONAYLA – WHATSAPP BİLDİRİMİ (9 DEĞİŞKENLİ) -----
+# ----- SİPARİŞ ONAYLA – WHATSAPP BİLDİRİMİ -----
 @app.route('/send-order', methods=['POST'])
 def send_order():
     data = request.get_json()
