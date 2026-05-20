@@ -6,6 +6,8 @@ import logging
 from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 from twilio.rest import Client
+from dotenv import load_dotenv
+load_dotenv()
 
 # ----- KONFİGÜRASYON -----
 logging.basicConfig(level=logging.INFO)
@@ -20,13 +22,6 @@ app.config['MAX_CONTENT_LENGTH'] = 32 * 1024 * 1024  # 32 MB
 PRICE_PER_GRAM = 1.5      # TL/gram
 EXTRA_PER_COLOR = 20      # TL (1 renk hariç)
 SHIPPING = 70             # TL
-
-# ----- TWILIO YAPILANDIRMASI (SENİN VERDİĞİN BİLGİLER) -----
-TWILIO_ACCOUNT_SID = 'ACb3449a1320e96eb49678962c1f2475dc'
-TWILIO_AUTH_TOKEN = '0376fc50593509a6afa7ce0bf8d05ff6'
-TWILIO_WHATSAPP_NUMBER = 'whatsapp:+14155238886'
-ADMIN_WHATSAPP_NUMBER = 'whatsapp:+905555541898'
-CONTENT_SID = 'HXe5536d67b0198cf458e1bb4e140be80f'   # 9 değişkenli şablon
 
 twilio_client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 
