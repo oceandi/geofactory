@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
-
   <style>
     /* ─── RESET & BASE ─────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,8 +20,7 @@
       --border:   rgba(255,255,255,0.08);
       --r1: #ff3cac; --r2: #ff6b35; --r3: #f7d22d;
       --r4: #56ef5c; --r5: #21d4fd; --r6: #b721ff;
-      --rainbow: linear-gradient(90deg,
-        var(--r1),var(--r2),var(--r3),var(--r4),var(--r5),var(--r6),var(--r1));
+      --rainbow: linear-gradient(90deg, var(--r1),var(--r2),var(--r3),var(--r4),var(--r5),var(--r6),var(--r1));
       --font-display: 'Syne', sans-serif;
       --font-body:    'DM Sans', sans-serif;
     }
@@ -551,77 +549,21 @@
       padding: 24px;
       border-left: 4px solid #ff6b35;
     }
-    .quote-card h3 {
-      font-family: var(--font-display);
-      margin-bottom: 20px;
-    }
-    .quote-detail {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 12px;
-      font-size: 15px;
-    }
-    .quote-total {
-      font-size: 28px;
-      font-weight: 800;
-      text-align: right;
-      margin-top: 16px;
-      padding-top: 12px;
-      border-top: 1px solid var(--border);
-    }
-    .warning-note {
-      font-size: 12px;
-      color: #ffaa00;
-      margin-top: 16px;
-      text-align: center;
-    }
-    .form-note {
-      font-size: 13px;
-      color: var(--muted);
-      text-align: center;
-      margin-top: 16px;
-    }
+    .quote-card h3 { font-family: var(--font-display); margin-bottom: 20px; }
+    .quote-detail { display: flex; justify-content: space-between; margin-bottom: 12px; }
+    .quote-total { font-size: 28px; font-weight: 800; text-align: right; margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border); }
+    .warning-note { font-size: 12px; color: #ffaa00; margin-top: 16px; text-align: center; }
+    .form-note { font-size: 13px; color: var(--muted); text-align: center; margin-top: 16px; }
 
     /* ─── FAQ ──────────────────────────────────────────────── */
     .faq-list { margin-top: 56px; }
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-    }
-    .faq-q {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 24px 0;
-      cursor: pointer;
-      font-size: 17px;
-      font-weight: 500;
-      gap: 24px;
-      user-select: none;
-    }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; cursor: pointer; font-weight: 500; gap: 24px; }
     .faq-q:hover { color: rgba(240,238,234,0.75); }
-    .faq-icon {
-      width: 24px; height: 24px;
-      border-radius: 50%;
-      border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      font-size: 16px;
-      transition: transform 0.3s;
-      color: var(--muted);
-    }
+    .faq-icon { width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; transition: transform 0.3s; }
     .faq-item.open .faq-icon { transform: rotate(45deg); }
-    .faq-a {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.3s;
-      font-size: 15px;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-    .faq-item.open .faq-a {
-      max-height: 300px;
-      padding-bottom: 24px;
-    }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; font-size: 15px; color: var(--muted); line-height: 1.7; }
+    .faq-item.open .faq-a { max-height: 300px; padding-bottom: 24px; }
 
     /* ─── FOOTER ───────────────────────────────────────────── */
     footer {
@@ -633,35 +575,13 @@
       grid-template-columns: 1fr 1fr 1fr;
       gap: 40px;
     }
-    .footer-brand {
-      font-family: var(--font-display);
-      font-size: 20px;
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
+    .footer-brand { font-family: var(--font-display); font-size: 20px; font-weight: 800; margin-bottom: 12px; }
     .footer-tagline { font-size: 14px; color: var(--muted); line-height: 1.6; }
-    .footer-col h4 {
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
+    .footer-col h4 { font-size: 13px; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
     .footer-col li { font-size: 14px; color: var(--muted); }
     .footer-col li strong { color: var(--text); }
-    .footer-bottom {
-      border-top: 1px solid var(--border);
-      padding: 24px 40px;
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 13px;
-      color: var(--muted);
-    }
+    .footer-bottom { border-top: 1px solid var(--border); padding: 24px 40px; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--muted); }
 
     /* ─── RESPONSIVE ───────────────────────────────────────── */
     @media (max-width: 900px) {
@@ -670,20 +590,17 @@
       section { padding: 80px 24px; }
       .steps { grid-template-columns: 1fr 1fr; }
       .materials-grid { grid-template-columns: 1fr; }
-      #stats { grid-template-columns: repeat(3,1fr); }
-      .stat-item { padding: 36px 20px; }
+      #stats { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
       .color-feature-inner { grid-template-columns: 1fr; gap: 48px; }
       .color-orbs { height: 320px; }
       .form-grid { grid-template-columns: 1fr; }
       .form-group.full { grid-column: 1; }
-      .form-submit { grid-column: 1; }
       footer { grid-template-columns: 1fr; gap: 36px; }
       .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
     }
     @media (max-width: 600px) {
       .hero-actions { flex-direction: column; align-items: center; }
-      #stats { grid-template-columns: 1fr; }
-      .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
       .steps { grid-template-columns: 1fr; }
     }
   </style>
@@ -726,18 +643,9 @@
 
   <!-- ── STATS ────────────────────────────────────────────── -->
   <div id="stats">
-    <div class="stat-item reveal">
-      <div class="stat-num rainbow-text">4</div>
-      <div class="stat-label">Renge kadar, tek baskıda</div>
-    </div>
-    <div class="stat-item reveal reveal-delay-1">
-      <div class="stat-num rainbow-text">Anlık</div>
-      <div class="stat-label">Fiyat teklifi</div>
-    </div>
-    <div class="stat-item reveal reveal-delay-2">
-      <div class="stat-num rainbow-text">TR</div>
-      <div class="stat-label">Türkiye'nin her yerine kargo</div>
-    </div>
+    <div class="stat-item reveal"><div class="stat-num rainbow-text">4</div><div class="stat-label">Renge kadar, tek baskıda</div></div>
+    <div class="stat-item reveal reveal-delay-1"><div class="stat-num rainbow-text">Anlık</div><div class="stat-label">Fiyat teklifi</div></div>
+    <div class="stat-item reveal reveal-delay-2"><div class="stat-num rainbow-text">TR</div><div class="stat-label">Türkiye'nin her yerine kargo</div></div>
   </div>
 
   <!-- ── COLOR FEATURE ────────────────────────────────────── -->
@@ -746,18 +654,16 @@
       <div class="reveal">
         <p class="section-eyebrow">AMS Teknolojisi</p>
         <h2 class="section-title">Renk artık<br><span class="rainbow-text">kısıtlama değil.</span></h2>
-        <p class="section-body" style="max-width:420px;">
-          Bambu Lab AMS ünitesi sayesinde aynı baskıda 4 farklı rengi, ekstra montaj veya boyama olmadan uyguluyoruz. Logo, isimlik, oyun figürü — ne hayal edersen.
-        </p>
-        <div class="color-swatches" aria-label="Mevcut renk seçenekleri">
-          <div class="swatch" style="background:#ff3cac;" title="Magenta"></div>
-          <div class="swatch" style="background:#ff6b35;" title="Turuncu"></div>
-          <div class="swatch" style="background:#f7d22d;" title="Sarı"></div>
-          <div class="swatch" style="background:#56ef5c;" title="Yeşil"></div>
-          <div class="swatch" style="background:#21d4fd;" title="Mavi"></div>
-          <div class="swatch" style="background:#b721ff;" title="Mor"></div>
-          <div class="swatch" style="background:#f0eeea;" title="Beyaz"></div>
-          <div class="swatch" style="background:#222;" title="Siyah" style="border:1px solid rgba(255,255,255,0.15)"></div>
+        <p class="section-body" style="max-width:420px;">Bambu Lab AMS ünitesi sayesinde aynı baskıda 4 farklı rengi, ekstra montaj veya boyama olmadan uyguluyoruz. Logo, isimlik, oyun figürü — ne hayal edersen.</p>
+        <div class="color-swatches">
+          <div class="swatch" style="background:#ff3cac;"></div>
+          <div class="swatch" style="background:#ff6b35;"></div>
+          <div class="swatch" style="background:#f7d22d;"></div>
+          <div class="swatch" style="background:#56ef5c;"></div>
+          <div class="swatch" style="background:#21d4fd;"></div>
+          <div class="swatch" style="background:#b721ff;"></div>
+          <div class="swatch" style="background:#f0eeea;"></div>
+          <div class="swatch" style="background:#222;"></div>
         </div>
       </div>
       <div class="color-orbs reveal reveal-delay-2" aria-hidden="true">
@@ -766,9 +672,7 @@
         <div class="orb orb-3"></div>
         <div class="orb orb-4"></div>
         <div class="orb orb-5"></div>
-        <div class="orb-center">
-          <div class="orb-center-label">4 Renk<br>Tek Baskı</div>
-        </div>
+        <div class="orb-center"><div class="orb-center-label">4 Renk<br>Tek Baskı</div></div>
       </div>
     </div>
   </div>
@@ -780,83 +684,11 @@
       <h2 class="section-title">Beş adım,<br>kapına kadar.</h2>
     </div>
     <div class="steps">
-      <div class="step-item reveal">
-        <div class="step-num">01</div>
-        <div class="step-icon" aria-hidden="true">
-          <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22 8v20M14 20l8 8 8-8" stroke="url(#g1)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M8 34h28" stroke="url(#g2)" stroke-width="2.5" stroke-linecap="round"/>
-            <defs>
-              <linearGradient id="g1" x1="14" y1="8" x2="30" y2="28"><stop stop-color="#ff3cac"/><stop offset="1" stop-color="#21d4fd"/></linearGradient>
-              <linearGradient id="g2" x1="8" y1="34" x2="36" y2="34"><stop stop-color="#21d4fd"/><stop offset="1" stop-color="#56ef5c"/></linearGradient>
-            </defs>
-          </svg>
-        </div>
-        <div class="step-title">Dosya Yükle</div>
-        <div class="step-desc">.stl, .3mf, .obj, .glb, .gltf.</div>
-      </div>
-      <div class="step-item reveal reveal-delay-1">
-        <div class="step-num">02</div>
-        <div class="step-icon" aria-hidden="true">
-          <svg viewBox="0 0 44 44" fill="none">
-            <rect x="8" y="12" width="28" height="20" rx="4" stroke="url(#g3)" stroke-width="2.5"/>
-            <path d="M14 20h16M14 26h10" stroke="url(#g4)" stroke-width="2.5" stroke-linecap="round"/>
-            <defs>
-              <linearGradient id="g3" x1="8" y1="12" x2="36" y2="32"><stop stop-color="#f7d22d"/><stop offset="1" stop-color="#ff6b35"/></linearGradient>
-              <linearGradient id="g4" x1="14" y1="20" x2="30" y2="26"><stop stop-color="#f7d22d"/><stop offset="1" stop-color="#ff3cac"/></linearGradient>
-            </defs>
-          </svg>
-        </div>
-        <div class="step-title">Anında Fiyat</div>
-        <div class="step-desc">Dosya boyutuna göre tahmini fiyat.</div>
-      </div>
-      <div class="step-item reveal reveal-delay-2">
-        <div class="step-num">03</div>
-        <div class="step-icon" aria-hidden="true">
-          <svg viewBox="0 0 44 44" fill="none">
-            <path d="M10 22a12 12 0 1 1 24 0 12 12 0 0 1-24 0Z" stroke="url(#g5)" stroke-width="2.5"/>
-            <path d="M22 16v6l4 4" stroke="url(#g6)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <defs>
-              <linearGradient id="g5" x1="10" y1="10" x2="34" y2="34"><stop stop-color="#21d4fd"/><stop offset="1" stop-color="#b721ff"/></linearGradient>
-              <linearGradient id="g6" x1="22" y1="16" x2="26" y2="26"><stop stop-color="#21d4fd"/><stop offset="1" stop-color="#56ef5c"/></linearGradient>
-            </defs>
-          </svg>
-        </div>
-        <div class="step-title">Havale Yap</div>
-        <div class="step-desc">IBAN'a açıklama ile ödeme.</div>
-      </div>
-      <div class="step-item reveal reveal-delay-3">
-        <div class="step-num">04</div>
-        <div class="step-icon" aria-hidden="true">
-          <svg viewBox="0 0 44 44" fill="none">
-            <rect x="12" y="14" width="20" height="16" rx="3" stroke="url(#g7)" stroke-width="2.5"/>
-            <path d="M16 20h12M16 25h8" stroke="url(#g8)" stroke-width="2" stroke-linecap="round"/>
-            <path d="M22 10v4M18 11l1.5 3M26 11l-1.5 3" stroke="url(#g9)" stroke-width="2" stroke-linecap="round"/>
-            <defs>
-              <linearGradient id="g7" x1="12" y1="14" x2="32" y2="30"><stop stop-color="#ff6b35"/><stop offset="1" stop-color="#f7d22d"/></linearGradient>
-              <linearGradient id="g8" x1="16" y1="20" x2="28" y2="25"><stop stop-color="#ff3cac"/><stop offset="1" stop-color="#b721ff"/></linearGradient>
-              <linearGradient id="g9" x1="18" y1="10" x2="26" y2="14"><stop stop-color="#f7d22d"/><stop offset="1" stop-color="#ff6b35"/></linearGradient>
-            </defs>
-          </svg>
-        </div>
-        <div class="step-title">Baskı Başlar</div>
-        <div class="step-desc">Ödeme onayıyla üretim.</div>
-      </div>
-      <div class="step-item reveal reveal-delay-4">
-        <div class="step-num">05</div>
-        <div class="step-icon" aria-hidden="true">
-          <svg viewBox="0 0 44 44" fill="none">
-            <path d="M8 30l6-12 8 6 6-10 8 16" stroke="url(#ga)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M36 22l2 8H6l2-8" stroke="url(#gb)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <defs>
-              <linearGradient id="ga" x1="8" y1="18" x2="36" y2="30"><stop stop-color="#56ef5c"/><stop offset="1" stop-color="#21d4fd"/></linearGradient>
-              <linearGradient id="gb" x1="6" y1="22" x2="38" y2="30"><stop stop-color="#21d4fd"/><stop offset="1" stop-color="#b721ff"/></linearGradient>
-            </defs>
-          </svg>
-        </div>
-        <div class="step-title">Kapına Gelir</div>
-        <div class="step-desc">Güvenli paketleme, kargo.</div>
-      </div>
+      <div class="step-item reveal"><div class="step-num">01</div><div class="step-title">Dosya Yükle</div><div class="step-desc">.stl, .3mf, .obj, .glb, .gltf</div></div>
+      <div class="step-item reveal reveal-delay-1"><div class="step-num">02</div><div class="step-title">Anında Fiyat</div><div class="step-desc">Dosya boyutuna göre tahmini fiyat</div></div>
+      <div class="step-item reveal reveal-delay-2"><div class="step-num">03</div><div class="step-title">Havale Yap</div><div class="step-desc">IBAN'a açıklama ile ödeme</div></div>
+      <div class="step-item reveal reveal-delay-3"><div class="step-num">04</div><div class="step-title">Baskı Başlar</div><div class="step-desc">Ödeme onayıyla üretim</div></div>
+      <div class="step-item reveal reveal-delay-4"><div class="step-num">05</div><div class="step-title">Kapına Gelir</div><div class="step-desc">Güvenli paketleme, kargo</div></div>
     </div>
   </section>
 
@@ -899,7 +731,7 @@
     </div>
   </section>
 
-  <!-- ── ORDER FORM (YENİ - ANINDA FİYAT + E-POSTA) ─────────── -->
+  <!-- ── ORDER FORM (ANINDA FİYAT + WHATSAPP) ─────────────── -->
   <div id="order">
     <div class="order-inner">
       <div class="reveal">
@@ -909,60 +741,22 @@
       </div>
 
       <form id="quote-form" class="form-grid" enctype="multipart/form-data">
-        <div class="form-group reveal">
-          <label for="name">Ad Soyad</label>
-          <input type="text" id="name" name="name" placeholder="Adın Soyadın" required>
-        </div>
-        <div class="form-group reveal reveal-delay-1">
-          <label for="email">E-posta</label>
-          <input type="email" id="email" name="email" placeholder="ornek@email.com" required>
-        </div>
-        <div class="form-group reveal reveal-delay-2">
-          <label for="phone">Telefon (opsiyonel)</label>
-          <input type="tel" id="phone" name="phone" placeholder="0500 000 00 00">
-        </div>
-        <div class="form-group reveal reveal-delay-3">
-          <label for="material">Malzeme Tercihi</label>
-          <select id="material" name="material">
-            <option value="pla">PLA — Standart (önerilen)</option>
-            <option value="petg">PETG — Dayanıklı</option>
-            <option value="karar ver">Karar vermedin, öner</option>
-          </select>
-        </div>
-        <div class="form-group reveal">
-          <label for="color_count">Kaç renk kullanılacak? (max 4)</label>
-          <input type="number" id="color_count" name="color_count" min="1" max="4" value="1">
-        </div>
-        <div class="form-group reveal reveal-delay-1">
-          <label for="color">Renk açıklaması (isteğe bağlı)</label>
-          <input type="text" id="color" name="color" placeholder="Örn: Kırmızı gövde, beyaz yazı">
-        </div>
-        <div class="form-group reveal reveal-delay-2">
-          <label for="quantity">Adet</label>
-          <input type="number" id="quantity" name="quantity" value="1" min="1">
-        </div>
-        <div class="form-group full upload-zone reveal">
-          <input type="file" id="file-input" name="file" accept=".stl,.3mf,.obj,.glb,.gltf" required>
-          <div class="upload-icon" aria-hidden="true">⬆</div>
-          <div class="upload-title">Dosyayı buraya sürükle veya tıkla</div>
-          <div class="upload-sub">.stl · .3mf · .obj · .glb · .gltf — Maks 32 MB</div>
-          <div id="file-name"></div>
-        </div>
-        <div class="form-group full reveal">
-          <label for="notes">Notlar (adres, özel istekler)</label>
-          <textarea id="notes" name="notes" placeholder="Teslimat adresi, eklemek istedikleriniz..."></textarea>
-        </div>
-        <div class="form-submit reveal">
-          <button type="button" id="calculate-btn" class="btn-rainbow">💰 Fiyat Hesapla</button>
-          <p class="form-note">Önce fiyat teklifini al, sonra siparişi onayla.</p>
-        </div>
+        <div class="form-group reveal"><label for="name">Ad Soyad</label><input type="text" id="name" name="name" placeholder="Adın Soyadın" required></div>
+        <div class="form-group reveal reveal-delay-1"><label for="email">E-posta</label><input type="email" id="email" name="email" placeholder="ornek@email.com" required></div>
+        <div class="form-group reveal reveal-delay-2"><label for="phone">Telefon (opsiyonel)</label><input type="tel" id="phone" name="phone" placeholder="0500 000 00 00"></div>
+        <div class="form-group reveal reveal-delay-3"><label for="material">Malzeme Tercihi</label><select id="material" name="material"><option value="pla">PLA — Standart (önerilen)</option><option value="petg">PETG — Dayanıklı</option><option value="karar ver">Karar vermedin, öner</option></select></div>
+        <div class="form-group reveal"><label for="color_count">Kaç renk kullanılacak? (max 4)</label><input type="number" id="color_count" name="color_count" min="1" max="4" value="1"></div>
+        <div class="form-group reveal reveal-delay-1"><label for="color">Renk açıklaması (isteğe bağlı)</label><input type="text" id="color" name="color" placeholder="Örn: Kırmızı gövde, beyaz yazı"></div>
+        <div class="form-group reveal reveal-delay-2"><label for="quantity">Adet</label><input type="number" id="quantity" name="quantity" value="1" min="1"></div>
+        <div class="form-group full upload-zone reveal"><input type="file" id="file-input" name="file" accept=".stl,.3mf,.obj,.glb,.gltf" required><div class="upload-icon">⬆</div><div class="upload-title">Dosyayı buraya sürükle veya tıkla</div><div class="upload-sub">.stl · .3mf · .obj · .glb · .gltf — Maks 32 MB</div><div id="file-name"></div></div>
+        <div class="form-group full reveal"><label for="notes">Notlar (adres, özel istekler)</label><textarea id="notes" name="notes" rows="3" placeholder="Teslimat adresi, eklemek istedikleriniz..."></textarea></div>
+        <div class="form-submit reveal"><button type="button" id="calculate-btn" class="btn-rainbow">💰 Fiyat Hesapla</button><p class="form-note">Önce fiyat teklifini al, sonra siparişi onayla.</p></div>
       </form>
 
-      <!-- Fiyat teklifi sonucu burada görünecek -->
       <div id="quote-result" class="quote-card" style="display: none;">
         <h3>💰 Fiyat Teklifi</h3>
         <div id="quote-details"></div>
-        <button id="confirm-order-btn" class="btn-rainbow" style="margin-top: 20px;">✅ Siparişi Onayla (E-posta Gönder)</button>
+        <button id="confirm-order-btn" class="btn-rainbow" style="margin-top: 20px;">✅ Siparişi Onayla (WhatsApp Bildirimi)</button>
         <div id="quote-warning" class="warning-note"></div>
       </div>
     </div>
@@ -975,93 +769,35 @@
       <h2 class="section-title">Aklındaki<br>sorular.</h2>
     </div>
     <div class="faq-list">
-      <div class="faq-item reveal">
-        <div class="faq-q" role="button" tabindex="0">
-          <span>Hangi dosya formatlarını kabul ediyorsunuz?</span>
-          <div class="faq-icon" aria-hidden="true">+</div>
-        </div>
-        <div class="faq-a">.stl, .3mf, .obj, .glb, .gltf. Dosya boyutuna göre anlık fiyat hesaplıyoruz.</div>
-      </div>
-      <div class="faq-item reveal reveal-delay-1">
-        <div class="faq-q" role="button" tabindex="0">
-          <span>Maksimum baskı boyutu nedir?</span>
-          <div class="faq-icon" aria-hidden="true">+</div>
-        </div>
-        <div class="faq-a">Bambu Lab A1: 256×256×256 mm, A1 Mini: 180×180×180 mm. Daha büyük parçaları bölüp yapıştırabiliriz.</div>
-      </div>
-      <div class="faq-item reveal reveal-delay-2">
-        <div class="faq-q" role="button" tabindex="0">
-          <span>Fiyat neye göre belirleniyor?</span>
-          <div class="faq-icon" aria-hidden="true">+</div>
-        </div>
-        <div class="faq-a">Dosya boyutuna göre yaklaşık ağırlık tahmini yapılır, gram fiyatı + renk sayısı + kargo eklenir. En doğru sonuç için STL önerilir.</div>
-      </div>
-      <div class="faq-item reveal reveal-delay-3">
-        <div class="faq-q" role="button" tabindex="0">
-          <span>Gerçekten 4 renk aynı anda basılabiliyor mu?</span>
-          <div class="faq-icon" aria-hidden="true">+</div>
-        </div>
-        <div class="faq-a">Evet! Bambu Lab AMS ile tek baskıda 4 renk, boyasız ve montajsız.</div>
-      </div>
-      <div class="faq-item reveal reveal-delay-4">
-        <div class="faq-q" role="button" tabindex="0">
-          <span>Ödeme nasıl yapılıyor?</span>
-          <div class="faq-icon" aria-hidden="true">+</div>
-        </div>
-        <div class="faq-a">Havale/EFT. Teklifi onayladıktan sonra IBAN gönderiyoruz.</div>
-      </div>
+      <div class="faq-item reveal"><div class="faq-q">Hangi dosya formatları?<div class="faq-icon">+</div></div><div class="faq-a">.stl, .3mf, .obj, .glb, .gltf. Dosya boyutuna göre anlık fiyat hesaplanır.</div></div>
+      <div class="faq-item reveal reveal-delay-1"><div class="faq-q">Maksimum baskı boyutu?<div class="faq-icon">+</div></div><div class="faq-a">Bambu Lab A1: 256×256×256 mm, A1 Mini: 180×180×180 mm. Daha büyük parçaları bölüp yapıştırabiliriz.</div></div>
+      <div class="faq-item reveal reveal-delay-2"><div class="faq-q">Fiyat neye göre belirleniyor?<div class="faq-icon">+</div></div><div class="faq-a">Dosya boyutundan yaklaşık ağırlık tahmini yapılır, gram fiyatı + renk sayısı + kargo eklenir. En doğru sonuç için STL önerilir.</div></div>
+      <div class="faq-item reveal reveal-delay-3"><div class="faq-q">4 renk aynı anda basılabilir mi?<div class="faq-icon">+</div></div><div class="faq-a">Evet! Bambu Lab AMS ile tek baskıda 4 renk, boyasız ve montajsız.</div></div>
+      <div class="faq-item reveal reveal-delay-4"><div class="faq-q">Ödeme nasıl yapılıyor?<div class="faq-icon">+</div></div><div class="faq-a">Havale/EFT. Teklifi onayladıktan sonra IBAN gönderiyoruz.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">Tasarım dosyam yok, yardım eder misiniz?<div class="faq-icon">+</div></div><div class="faq-a">Hazır model yoksa Thingiverse, Printables gibi sitelerden link atabilirsiniz. Özel tasarım için iletişime geçin.</div></div>
     </div>
   </section>
 
   <!-- ── FOOTER ─────────────────────────────────────────────── -->
   <footer>
-    <div>
-      <div class="footer-brand rainbow-text">SPEKTRUM</div>
-      <p class="footer-tagline">Türkiye'nin her yerine<br>renkli 3D baskı servisi.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Bağlantı</h4>
-      <ul>
-        <li><a href="#nasil">Nasıl Çalışır</a></li>
-        <li><a href="#malzemeler">Malzemeler</a></li>
-        <li><a href="#sss">SSS</a></li>
-        <li><a href="#order">Sipariş Ver</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>İletişim</h4>
-      <ul>
-        <li><strong>E-posta:</strong> sizin@email.com</li>
-        <li><strong>Şehir:</strong> Bursa, TR</li>
-        <li><strong>IBAN:</strong><br>TR00 0000 0000 0000 0000 000000</li>
-      </ul>
-    </div>
+    <div><div class="footer-brand rainbow-text">SPEKTRUM</div><p class="footer-tagline">Türkiye'nin her yerine renkli 3D baskı servisi.</p></div>
+    <div class="footer-col"><h4>Bağlantı</h4><ul><li><a href="#nasil">Nasıl Çalışır</a></li><li><a href="#malzemeler">Malzemeler</a></li><li><a href="#sss">SSS</a></li><li><a href="#order">Sipariş Ver</a></li></ul></div>
+    <div class="footer-col"><h4>İletişim</h4><ul><li><strong>E-posta:</strong> sizin@email.com</li><li><strong>Şehir:</strong> Bursa, TR</li><li><strong>IBAN:</strong><br>TR00 0000 0000 0000 0000 000000</li></ul></div>
   </footer>
-  <div class="footer-bottom">
-    <span>© 2025 SPEKTRUM</span>
-    <span>Bambu Lab A1 & A1 Mini · AMS</span>
-  </div>
+  <div class="footer-bottom"><span>© 2025 SPEKTRUM</span><span>Bambu Lab A1 & A1 Mini · AMS</span></div>
 
-  <!-- ── JAVASCRIPT (TAMAMEN YENİ) ─────────────────────────── -->
   <script>
-    // ── Sticky nav ──
+    // ── STICKY NAV ──
     const nav = document.getElementById('main-nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 40);
-    }, { passive: true });
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
 
-    // ── Scroll reveal ──
+    // ── SCROLL REVEAL ──
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // ── FAQ accordion ──
+    // ── FAQ ACCORDION ──
     document.querySelectorAll('.faq-q').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.closest('.faq-item');
@@ -1069,24 +805,15 @@
         document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
         if (!isOpen) item.classList.add('open');
       });
-      btn.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); }
-      });
     });
 
-    // ── File upload display ──
+    // ── FILE UPLOAD DISPLAY ──
     const fileInput = document.getElementById('file-input');
     const fileNameEl = document.getElementById('file-name');
-    const uploadZone = fileInput.closest('.upload-zone');
-    fileInput.addEventListener('change', () => {
-      fileNameEl.textContent = fileInput.files[0]?.name || '';
-    });
-    uploadZone.addEventListener('dragover', e => { e.preventDefault(); uploadZone.classList.add('drag-over'); });
-    uploadZone.addEventListener('dragleave', () => uploadZone.classList.remove('drag-over'));
-    uploadZone.addEventListener('drop', () => uploadZone.classList.remove('drag-over'));
+    fileInput.addEventListener('change', () => { fileNameEl.textContent = fileInput.files[0]?.name || ''; });
 
-    // ── Fiyat hesaplama ve sipariş onaylama ──
-    const API_URL = "http://127.0.0.1:5050/quote";  // Flask app'in adresi
+    // ── FİYAT HESAPLAMA VE WHATSAPP ONAY (9 DEĞİŞKENLİ) ──
+    const API_URL = "http://127.0.0.1:5050/quote";
     const calcBtn = document.getElementById('calculate-btn');
     const quoteResultDiv = document.getElementById('quote-result');
     const quoteDetailsSpan = document.getElementById('quote-details');
@@ -1094,22 +821,15 @@
     const quoteWarning = document.getElementById('quote-warning');
     let currentQuote = null;
 
-    // Fiyat hesapla
     calcBtn.addEventListener('click', async () => {
-      if (!fileInput.files.length) {
-        alert('Lütfen bir 3D dosyası seçin.');
-        return;
-      }
-
+      if (!fileInput.files.length) { alert('Lütfen bir 3D dosyası seçin.'); return; }
       const formData = new FormData();
       formData.append('file', fileInput.files[0]);
       formData.append('material', document.getElementById('material').value);
       formData.append('color_count', document.getElementById('color_count').value);
       formData.append('quantity', document.getElementById('quantity').value);
-
       calcBtn.disabled = true;
       calcBtn.textContent = 'Hesaplanıyor...';
-
       try {
         const response = await fetch(API_URL, { method: 'POST', body: formData });
         const data = await response.json();
@@ -1122,61 +842,40 @@
             <div class="quote-detail"><span>💰 Malzeme bedeli</span><strong>${data.breakdown.material_tl} TL</strong></div>
             <div class="quote-detail"><span>🎨 Renk ek ücreti</span><strong>${data.breakdown.color_fee_tl} TL</strong></div>
             <div class="quote-detail"><span>📦 Kargo</span><strong>${data.breakdown.shipping_tl} TL</strong></div>
-            <div class="quote-total rainbow-text">Toplam: ${data.price_tl} TL</div>
-          `;
-          if (data.warning) {
-            quoteWarning.textContent = '⚠️ Dosya boyutuna göre tahmini değer. En doğru sonuç için STL formatı önerilir.';
-          } else {
-            quoteWarning.textContent = '';
-          }
+            <div class="quote-total rainbow-text">Toplam: ${data.price_tl} TL</div>`;
+          quoteWarning.innerText = data.warning ? '⚠️ Dosya boyutuna göre tahmini değer. En doğru sonuç için STL formatı önerilir.' : '';
           quoteResultDiv.style.display = 'block';
-        } else {
-          alert('Hata: ' + data.error);
-        }
-      } catch (err) {
-        alert('Sunucu hatası: ' + err.message + '\nLütfen Flask uygulamasının çalıştığından emin olun (python app.py)');
-      } finally {
-        calcBtn.disabled = false;
-        calcBtn.textContent = '💰 Fiyat Hesapla';
-      }
+        } else alert('Hata: ' + data.error);
+      } catch (err) { alert('Sunucu hatası: ' + err.message); }
+      finally { calcBtn.disabled = false; calcBtn.textContent = '💰 Fiyat Hesapla'; }
     });
 
-    // Sipariş onayla (mailto ile e-posta)
-    confirmBtn.addEventListener('click', () => {
-      if (!currentQuote) {
-        alert('Lütfen önce fiyat hesaplayın.');
-        return;
-      }
-
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
-      const material = document.getElementById('material').value;
-      const colorCount = document.getElementById('color_count').value;
-      const quantity = document.getElementById('quantity').value;
-      const colorDesc = document.getElementById('color').value;
-      const notes = document.getElementById('notes').value;
-
-      const subject = `SPEKTRUM Sipariş - ${name}`;
-      const body = `
-Ad Soyad: ${name}
-E-posta: ${email}
-Telefon: ${phone || '-'}
-Malzeme: ${material}
-Renk sayısı: ${colorCount}
-Renk açıklaması: ${colorDesc || '-'}
-Adet: ${quantity}
-Ağırlık: ${currentQuote.weight_g} g
-Baskı süresi: ${currentQuote.print_minutes} dk
-Filament: ${currentQuote.filament_meters} metre
-Malzeme bedeli: ${currentQuote.breakdown.material_tl} TL
-Renk ek ücreti: ${currentQuote.breakdown.color_fee_tl} TL
-Kargo: ${currentQuote.breakdown.shipping_tl} TL
-Toplam fiyat: ${currentQuote.price_tl} TL
-Notlar: ${notes}
-      `;
-      window.location.href = `mailto:korkmaz.x7@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      alert('Sipariş talebiniz e-posta ile gönderildi. En kısa sürede dönüş yapacağız.');
+    confirmBtn.addEventListener('click', async () => {
+      if (!currentQuote) { alert('Lütfen önce fiyat hesaplayın.'); return; }
+      const orderData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        material: document.getElementById('material').value,
+        color: document.getElementById('color').value,
+        color_count: document.getElementById('color_count').value,
+        quantity: document.getElementById('quantity').value,
+        total_price: currentQuote.price_tl,
+        notes: document.getElementById('notes').value
+      };
+      confirmBtn.disabled = true;
+      confirmBtn.textContent = 'Sipariş Onaylanıyor...';
+      try {
+        const response = await fetch('/send-order', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(orderData)
+        });
+        const result = await response.json();
+        if (result.success) alert(`✅ Siparişiniz alındı! Sipariş numaranız: ${result.order_number}\nEn kısa sürede WhatsApp'tan dönüş yapacağız.`);
+        else alert('❌ Hata: ' + result.error);
+      } catch (err) { alert('Sunucu hatası: ' + err.message); }
+      finally { confirmBtn.disabled = false; confirmBtn.textContent = '✅ Siparişi Onayla (WhatsApp Bildirimi)'; }
     });
   </script>
 </body>
